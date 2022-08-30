@@ -1,17 +1,33 @@
 .main {
-  background-color: getbgcolor(tuna-seconadry);
-  background-image: linear-gradient(
-      to right,
-      getbgcolor(black-rock),
-      getbgcolor(black-rock)
-    ),
-    url("https://raw.githubusercontent.com/Wojtek-A/goit-markup-hw-08/main/images/main.jpg");
-  max-width: 1600px;
-  width: 100%;
+  padding: 0px;
   margin: 0 auto;
+  background-color: getbgcolor(tuna-seconadry);
+  background-image:
+    linear-gradient(to right,
+      getbgcolor(black-rock),
+      getbgcolor(black-rock)),
+    url(/images/main_w480.jpg);
+
+  @media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+    .main {
+      background-image:
+        linear-gradient(to right,
+          getbgcolor(black-rock),
+          getbgcolor(black-rock)),
+        url(/images/main_w480@x2.jpg);
+    }
+  }
+
+  max-width: 480px;
+  min-width: 320px;
+  width: 100%;
   background-repeat: no-repeat;
-  background-position: 50% 50%;
+  background-position: center;
+  background-size: 100%;
 }
+
 .main-elements {
   display: flex;
   flex-direction: column;
@@ -20,12 +36,13 @@
   &__text {
     color: getcolor(whited);
     font-weight: 900;
-    font-size: 44px;
-    line-height: 1.36;
+    font-size: 26px;
+    line-height: 1.58;
     letter-spacing: 0.06em;
     text-align: center;
-    margin-top: 106px;
+    margin-top: 118px;
   }
+
   &__button {
     font-family: $primaryfont;
     border-radius: 4px;
@@ -39,5 +56,68 @@
     line-height: 1.86;
     letter-spacing: 0.06em;
     cursor: pointer;
+  }
+}
+
+@media screen and (min-width:768px) {
+  .main {
+    max-width: 768px;
+    padding: 6px 0 22px 0;
+    background-image:
+      linear-gradient(to right,
+        getbgcolor(black-rock),
+        getbgcolor(black-rock)),
+      url(/images/main_w768.jpg);
+
+    @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+      .main {
+        background-image:
+          linear-gradient(to right,
+            getbgcolor(black-rock),
+            getbgcolor(black-rock)),
+          url(/images/main_w768@x2.jpg);
+      }
+    }
+  }
+
+  .main-elements {
+    &__text {
+      margin-top: 118px;
+      line-height: 1.36;
+    }
+  }
+}
+
+@media screen and (min-width:1200px) {
+  .main {
+    max-width: 1600px;
+    padding: 90px 0;
+    background-image:
+      linear-gradient(to right,
+        getbgcolor(black-rock),
+        getbgcolor(black-rock)),
+      url(/images/main_w1600.jpg);
+    background-size: contain;
+  }
+
+  @media (min-device-input-ratio: 2),
+  (min-resolution: 288dpi) {
+    .main {
+      background-image:
+        linear-gradient(to right,
+          getbgcolor(black-rock),
+          getbgcolor(black-rock)),
+        url(/images/main_w1600@x2.jpg);
+      background-size: contain;
+    }
+  }
+
+  .main-elements {
+    &__text {
+      font-size: 44px;
+      margin-top: 106px;
+    }
   }
 }

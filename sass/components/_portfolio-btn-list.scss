@@ -1,12 +1,16 @@
 .portfolio-buttons-list {
+  height: 91px;
   list-style-type: none;
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: space-between;
   gap: 7px;
+
   &__button {
-    padding: 4px 22px;
     background-color: getbgcolor(whisper);
-    font-weight: 600;
+    padding: 6px 30px;
+    font-weight: 500;
     font-size: 16px;
     line-height: 1.62;
     border-radius: 4px;
@@ -16,12 +20,28 @@
     transition-property: color, background-color, box-shadow;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
     &:hover,
     &:focus {
       color: getcolor(whited);
       background-color: getbgcolor(dodger-blue);
       box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12),
         0px 1px 2px 0px rgba(0, 0, 0, 0.08), 0px 3px 1px 0px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+@media screen and (min-width:768px) {
+  .portfolio-buttons-list {
+    height: unset;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width:1200px) {
+  .portfolio-buttons-list {
+    &__button {
+      padding: 4px 22px;
     }
   }
 }

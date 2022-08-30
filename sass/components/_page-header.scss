@@ -1,88 +1,362 @@
-.header {
-  height: 80px;
-  padding-top: 0;
-  padding-bottom: 0;
-  display: flex;
-  align-items: center;
+.header-links,
+.header-contacts {
+  display: none;
 }
-.header-links {
+
+.header {
+  height: 60px;
+  padding: 0px;
   display: flex;
   align-items: center;
-  width: 492px;
-  gap: 46px;
-  padding: 2px 111px 0 95px;
+  justify-content: space-between;
+  padding-left: 15px;
+  padding-right: 23px;
+
+  &__button {
+    cursor: pointer;
+    padding: 0px;
+    background-color: transparent;
+    border: none;
+    width: 24px;
+    fill: getfillcolor(blacky);
+
+    &:hover,
+    &:focus {
+      fill: getfillcolor(dodger-blue);
+    }
+  }
+}
+
+.menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 32px;
+  background-color: getbgcolor(whited);
+  z-index: 999;
+  transform: translateX(100%);
+  transition: transform 250ms ease-in-out;
+
+  &__button {
+    position: absolute;
+    top: 43px;
+    right: 20px;
+    min-height: 40px;
+    min-width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    background-color: getbgcolor(whited);
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    outline: none;
+    fill: getfillcolor(blacky);
+    transition: fill 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+      fill: getfillcolor(dodger-blue);
+    }
+  }
+
+  &__item {
+    padding-bottom: 32px;
+  }
+
+  &__links {
+    list-style-type: none;
+    padding-top: 48px;
+    padding-left: 40px;
+  }
 
   &__link {
-    position: relative;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 1.175;
+    letter-spacing: 0.02em;
     color: getcolor(blacky);
-    font-weight: 500;
-    line-height: 1.14;
-    font-size: 14px;
-    letter-spacing: 0.02em;
-    padding: 0px;
-    text-decoration: none;
-    transition-property: color;
-    transition-duration: 250ms;
+    transition: color 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    &:hover,
+
+    &:hover {
+      color: getcolor(dodger-blue);
+    }
+
     &:focus {
       color: getcolor(dodger-blue);
-      fill: getfillcolor(dodger-blue);
     }
   }
-}
-.header-links-portfolio {
-  @extend .header-links;
-  gap: 47px;
-  padding: 0 345px 0 93px;
-}
-.header-contacts {
-  list-style-type: none;
-  display: flex;
-  margin-left: 202px;
-  margin-top: 6px;
-  justify-content: flex-end;
-  width: 321px;
-  gap: 30px;
-  &__contact {
+
+  &__contacts {
+    list-style-type: none;
+    padding: 278px 0 32px 40px;
+  }
+
+  &__phone {
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 1.176;
+    letter-spacing: 0.02em;
+    text-decoration: none;
     color: getcolor(boulder);
-    fill: getfillcolor(boulder);
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    text-decoration: none;
-    line-height: 1.14;
-    font-size: 14px;
-    transition-property: color, fill;
-    transition-duration: 250ms;
+    transition: color 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    &:hover,
+
+    &:hover {
+      color: getcolor(dodger-blue);
+    }
+
     &:focus {
       color: getcolor(dodger-blue);
-      fill: getfillcolor(dodger-blue);
     }
   }
+
+  &__email {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.16;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    color: getcolor(boulder);
+    transition: color 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+      color: getcolor(dodger-blue);
+    }
+
+    &:focus {
+      color: getcolor(dodger-blue);
+    }
+  }
+
+  &__socials {
+    list-style-type: none;
+    display: flex;
+    padding-left: 40px;
+  }
+
+  &__socials-link {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.22;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    color: getcolor(blacky);
+    transition: color 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+      color: getcolor(dodger-blue);
+    }
+
+    &:focus {
+      color: getcolor(dodger-blue);
+    }
+  }
+
+  &__social-link-border:not(:last-child) {
+    padding-right: 10px;
+    border-right: 1px solid getbrdcolor(bombay);
+  }
+
+  &__social-link-border:not(:first-child) {
+    padding-left: 10px;
+  }
 }
-.header-contacts-portfolio {
-  @extend .header-contacts;
-  margin-left: 219px;
-  margin-top: 4px;
-  width: 321px;
-  gap: 28px;
+
+.is-open {
+  transform: translateX(0%);
 }
-.line::after {
+
+.menu-container.is-open {
+  transform: translateX(0);
+}
+
+.menu-container .menu-toggle {
   position: absolute;
-  background: getcolor(dodger-blue);
-  content: "";
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 44px;
-  height: 4px;
-  border-radius: 2px;
+  top: 16px;
+  right: 16px;
+  color: #fff;
 }
-.header-text-color {
-  color: getcolor(dodger-blue);
+
+@media screen and (min-width:768px) {
+  .header {
+    display: unset;
+    height: 80px;
+    padding-top: 0;
+    padding-bottom: 0;
+    display: flex;
+    align-items: center;
+
+    &__button {
+      display: none;
+
+    }
+  }
+
+  .header-links {
+    display: flex;
+    align-items: center;
+    width: 492px;
+    gap: 60px;
+    padding: 2px 50px 0 75px;
+
+    &__link {
+      position: relative;
+      color: getcolor(blacky);
+      font-weight: 500;
+      line-height: 1.14;
+      font-size: 14px;
+      letter-spacing: 0.02em;
+      padding: 0px;
+      text-decoration: none;
+      transition-property: color;
+      transition-duration: 250ms;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+      &:hover,
+      &:focus {
+        color: getcolor(dodger-blue);
+        fill: getfillcolor(dodger-blue);
+      }
+    }
+  }
+
+  .header-contacts {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    margin-top: 6px;
+    width: 321px;
+
+    &__contact {
+      color: getcolor(boulder);
+      fill: getfillcolor(boulder);
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      line-height: 1.14;
+      font-size: 12px;
+      transition-property: color, fill;
+      transition-duration: 250ms;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+      &:hover,
+      &:focus {
+        color: getcolor(dodger-blue);
+        fill: getfillcolor(dodger-blue);
+      }
+    }
+  }
+
+  .header-contacts-portfolio {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    margin-left: 43px;
+    margin-top: -4px;
+    justify-content: flex-end;
+    width: 321px;
+
+    &__contact {
+      color: getcolor(boulder);
+      fill: getfillcolor(boulder);
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      line-height: 1.14;
+      font-size: 14px;
+      transition-property: color, fill;
+      transition-duration: 250ms;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+      &:hover,
+      &:focus {
+        color: getcolor(dodger-blue);
+        fill: getfillcolor(dodger-blue);
+      }
+    }
+  }
+
+  .line::after {
+    position: absolute;
+    background: getcolor(dodger-blue);
+    content: "";
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 44px;
+    height: 4px;
+    border-radius: 2px;
+  }
+
+  .header-text-color {
+    color: getcolor(dodger-blue);
+  }
+
+  .border {
+    border-bottom: 1px solid getbrdcolor(gallery);
+  }
 }
-.border {
-  border-bottom: 1px solid getbrdcolor(gallery);
+
+@media screen and (min-width:1200px) {
+  .header-links {
+    gap: 46px;
+    padding: 2px 111px 0 95px;
+  }
+
+  .header-links-portfolio {
+    display: flex;
+    align-items: center;
+    width: 492px;
+    gap: 47px;
+    padding: 0 345px 0 93px;
+
+    &__link {
+      position: relative;
+      color: getcolor(blacky);
+      font-weight: 500;
+      line-height: 1.14;
+      font-size: 14px;
+      letter-spacing: 0.02em;
+      padding: 0px;
+      text-decoration: none;
+      transition-property: color;
+      transition-duration: 250ms;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+      &:hover,
+      &:focus {
+        color: getcolor(dodger-blue);
+        fill: getfillcolor(dodger-blue);
+      }
+    }
+  }
+
+  .header-contacts {
+    flex-direction: row;
+    margin-left: 202px;
+    justify-content: flex-end;
+    gap: 30px;
+
+    &__contact {
+      font-size: 14px;
+    }
+  }
+
+  .header-contacts-portfolio {
+    flex-direction: row;
+    margin-left: 219px;
+    margin-top: 4px;
+    gap: 28px;
+  }
 }

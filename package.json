@@ -1,7 +1,7 @@
 {
-  "name": "goit-markup-hw-07",
+  "name": "goit-markup-hw-08",
   "version": "1.0.0",
-  "description": "https://wojtek-a.github.io/goit-markup-hw-07/",
+  "description": "https://wojtek-a.github.io/goit-markup-hw-08/",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

@@ -2,7 +2,7 @@ $color: (
   "whited": #fff,
   "dodger-blue": #2196f3,
   "boulder": #757575,
-  "blacky":  #212121,
+  "blacky": #212121,
   "white-darker": #ffffff99,
   "white-grey": rgba(255, 255, 255, 0.6),
 );
@@ -31,26 +31,40 @@ $fillcolor: (
   "whisper": #f5f4fa,
   "whited": #fff,
   "dodger-blue": #2196f3,
-  "blacky": #000000,
+  "blacky": #212121,
   "bombay": #afb1b8,
   "boulder": #757575,
 );
 
 @function getcolor($key) {
   @return map-get($color, $key);
-};
+}
+
+;
 
 @function getbgcolor($key) {
   @return map-get($bgcolor, $key);
-};
+}
+
+;
 
 @function getbrdcolor($key) {
   @return map-get($brdcolor, $key);
-};
+}
+
+;
 
 @function getfillcolor($key) {
   @return map-get($fillcolor, $key);
-};
+}
 
-$primaryfont: ("Roboto", sans-serif);
-$secondaryfont: ("Raleway", sans-serif);
+;
+
+$primaryfont: (
+  "Roboto",
+  sans-serif
+);
+$secondaryfont: (
+  "Raleway",
+  sans-serif
+);

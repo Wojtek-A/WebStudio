@@ -4,11 +4,13 @@
   justify-content: center;
   gap: 10px;
 }
+
 %socila-links__link {
   border-radius: 50%;
   transition-property: fill, background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
   &:hover,
   &:focus {
     cursor: pointer;
@@ -16,12 +18,13 @@
     background-color: getbgcolor(dodger-blue);
   }
 }
+
 .social-links-employee {
   @extend %social-links;
   width: 270px;
-  margin-top: 16px;
-  margin-bottom: 26px;
+  margin: 16px auto 26px auto;
 }
+
 .social-links-employee__link {
   @extend %socila-links__link;
   fill: getfillcolor(bombay);
@@ -31,6 +34,7 @@
   @extend %social-links;
   padding-top: 20px;
 }
+
 .social-links-footer__link {
   @extend %socila-links__link;
   fill: getfillcolor(whited);

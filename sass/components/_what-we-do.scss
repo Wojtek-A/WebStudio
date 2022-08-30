@@ -3,18 +3,22 @@
   font-size: 36px;
   text-align: center;
   padding-top: 0;
+
   h2 {
     letter-spacing: 0.03em;
   }
+
   &__list {
     list-style-type: none;
     display: flex;
     justify-content: space-between;
     padding-top: 50px;
   }
+
   &__picture {
     position: relative;
   }
+
   &__picture-text {
     width: 370px;
     height: 70px;
@@ -25,10 +29,14 @@
     color: getcolor(whited);
     font-size: 14px;
     line-height: 16.41px;
-    background-image: linear-gradient(
-      to right,
-      rgba(47, 48, 58, 0.8),
-      rgba(47, 48, 58, 0.8)
-    );
+    background-image: linear-gradient(to right,
+        rgba(47, 48, 58, 0.8),
+        rgba(47, 48, 58, 0.8));
+  }
+}
+
+@media screen and (max-width:1200px) {
+  .what-we-do {
+    display: none;
   }
 }
