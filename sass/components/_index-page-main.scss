@@ -6,7 +6,8 @@
     linear-gradient(to right,
       getbgcolor(black-rock),
       getbgcolor(black-rock)),
-    url(/images/main_w480.jpg);
+    url("https://github.com/Wojtek-A/goit-markup-hw-08/raw/main/images/main_w480.jpg");
+    
 
   @media (min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
@@ -16,7 +17,7 @@
         linear-gradient(to right,
           getbgcolor(black-rock),
           getbgcolor(black-rock)),
-        url(/images/main_w480@x2.jpg);
+        url("https://github.com/Wojtek-A/goit-markup-hw-08/raw/main/images/main_w480@x2.jpg");
     }
   }
 
@@ -67,7 +68,7 @@
       linear-gradient(to right,
         getbgcolor(black-rock),
         getbgcolor(black-rock)),
-      url(/images/main_w768.jpg);
+      url("https://github.com/Wojtek-A/goit-markup-hw-08/raw/main/images/main_w768.jpg");
 
     @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
@@ -77,7 +78,7 @@
           linear-gradient(to right,
             getbgcolor(black-rock),
             getbgcolor(black-rock)),
-          url(/images/main_w768@x2.jpg);
+          url("https://github.com/Wojtek-A/goit-markup-hw-08/raw/main/images/main_w768@x2.jpg");
       }
     }
   }
@@ -98,8 +99,8 @@
       linear-gradient(to right,
         getbgcolor(black-rock),
         getbgcolor(black-rock)),
-      url(/images/main_w1600.jpg);
-    background-size: contain;
+      url("https://github.com/Wojtek-A/goit-markup-hw-08/raw/main/images/main_w1600.jpg");
+    
   }
 
   @media (min-device-input-ratio: 2),
@@ -109,8 +110,8 @@
         linear-gradient(to right,
           getbgcolor(black-rock),
           getbgcolor(black-rock)),
-        url(/images/main_w1600@x2.jpg);
-      background-size: contain;
+        url("https://github.com/Wojtek-A/goit-markup-hw-08/raw/main/images/main_w1600@x2.jpg");
+     
     }
   }
 
